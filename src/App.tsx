@@ -19,7 +19,10 @@ function App() {
   useEffect(() => {
     async function loadTasks() {
       try {
-        const response = await axios.get("http://localhost:5002/api/tasks");
+        // const response = await axios.get("http://localhost:5002/api/tasks");
+        const response = await axios.get(
+          "https://mern-todo-backend-mh82.onrender.com/api/tasks"
+        );
         setTasks(response.data);
       } catch (error) {
         console.error("Error loading tasks:", error);
@@ -54,7 +57,8 @@ function App() {
         done: false,
       };
       const response = await axios.post(
-        "http://localhost:5002/api/tasks/add",
+        // "http://localhost:5002/api/tasks/add",
+        "https://mern-todo-backend-mh82.onrender.com/api/tasks/add",
         newTask
       );
       setTasks([...tasks, response.data]);
@@ -77,7 +81,10 @@ function App() {
   // delete tasks
   async function deleteTaskById(taskId) {
     try {
-      await axios.delete(`http://localhost:5002/api/tasks/delete/${taskId}`);
+      // await axios.delete(`http://localhost:5002/api/tasks/delete/${taskId}`);
+      await axios.delete(
+        `https://mern-todo-backend-mh82.onrender.com/api/tasks/delete/${taskId}`
+      );
       const newTasks = tasks.filter((task) => task._id !== taskId);
       setTasks(newTasks);
     } catch (error) {
@@ -100,7 +107,8 @@ function App() {
       }
       const updatedTask = { ...task, done: !task.done };
       await axios.put(
-        `http://localhost:5002/api/tasks/update/${taskId}`,
+        // `http://localhost:5002/api/tasks/update/${taskId}`,
+        `https://mern-todo-backend-mh82.onrender.com/api/tasks/update/${taskId}`,
         updatedTask
       );
       const newTasks = tasks.map((task) =>
