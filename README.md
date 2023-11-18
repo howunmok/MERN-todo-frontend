@@ -9,7 +9,7 @@ This is the frontend of the Todo App, a dynamic web application for managing tas
 - **Interactive UI**: Engaging user interface for an enhanced user experience.
 
 ## Connecting to Backend
-This frontend is designed to work with a separate backend server. For details on the backend setup, visit the [Backend Repository](https://github.com/howunmok/ITDG-MEAN-survey-backend).
+This frontend is designed to work with a separate backend server. For details on the backend setup, visit the [Backend Repository](https://github.com/howunmok/MERN-todo-backend).
 
 ## Usage
 1. **Add a Task**: Click the 'Create' button to enter a new task.
